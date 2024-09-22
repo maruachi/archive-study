@@ -17,3 +17,13 @@
   - Observable이 클래스로 정의되어 있어서 다른 클래스 상속이 불가능
   - 동기화 처리가 안 되어 있어서 Thread-safe 문제가 존재
 - [옵저버 패턴이란?](https://pjh3749.tistory.com/266)
+
+# State 패턴은 무엇일까?
+- State에 따라 행위와 상태 변화를 정의하는 디자인 패턴
+- State interface는 `speak()`와 `wait()`의 기본 구성을 가진다.
+  - `speak()`: 상태에 대한 기능 정의
+  - `wait()`: 상태 변화를 담당
+- Context 클래스는 State를 가지고 `speak()`와 `wait()`을 감싸는 구조를 가진다.
+- 이를 보면, 전략패턴과 유사해보이지만 상태 메소드에 context 자신을 넘기는 부분이 다르다.
+  - 객체 관계를 보면 전략 패턴에서 각 전략들은 서로와 컨텍스트를 모르지만, 상태 팬터에서 각 상태들은 서로하고 컨텍스트를 모두 안다.
+- [유튜브 영상 자료](https://www.youtube.com/watch?v=278vXJkgXoY)
