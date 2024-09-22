@@ -37,3 +37,10 @@
     - `good-first-issue`, `first-timer-only`, `low-haning-fruit` 
 - [open source 기여 입문 팁](https://velog.io/@skynet/%EC%98%A4%ED%94%88%EC%86%8C%EC%8A%A4-%EA%B8%B0%EC%97%AC-%EC%9E%85%EB%AC%B8)
 - [open source 겨여 방법](https://velog.io/@youngjun_10/Github-%EC%98%A4%ED%94%88%EC%86%8C%EC%8A%A4-%EA%B8%B0%EC%97%AC%ED%95%98%EA%B8%B0)
+
+# Adapter 패턴은 무엇일까?
+- 인터페이스가 호환되지 않을 때 인터페이스를 연결해주는 디자인 패턴
+- Adapter, Adaptee, Target interface가 존재한다.
+- 클라이언트에서 Target Interface로 Adaptee의 인터페이스를 통일 시키고 싶을 때 Adapter를 중간에 두어 Target Interface인 척 사용할 수 있다.
+- 구현은 Adapter는 Target Interface를 상속 받아서 Adapter 내부에서 Adaptee의 기능을 Target Interface 기준으로 재설계 해주면 된다.
+  
