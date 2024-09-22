@@ -73,3 +73,12 @@
 - Visitor 패턴은 무엇일까?
 - 이벤트 큐 vs 메세지 큐
   - [[Architecture] 메시지 브로커와 이벤트 브로커 - 메시지와 이벤트 그리고 RabbitMQ 와 Kafka](https://velog.io/@beberiche/Architecture-%EB%A9%94%EC%8B%9C%EC%A7%80-%EB%B8%8C%EB%A1%9C%EC%BB%A4%EC%99%80-%EC%9D%B4%EB%B2%A4%ED%8A%B8-%EB%B8%8C%EB%A1%9C%EC%BB%A4-%EB%A9%94%EC%8B%9C%EC%A7%80%EC%99%80-%EC%9D%B4%EB%B2%A4%ED%8A%B8-%EA%B7%B8%EB%A6%AC%EA%B3%A0-RabbitMQ-%EC%99%80-Kafka)
+ 
+# node.js vs spring
+- http 요청에 대해서 node.js는 single thread로 처리하고 spring은 별도의 thread로 만들어서 처리한다. 이는 응답성에 큰 차이를 발생시킨다.
+- 대신에 node.js는 가볍다는 장점이 있다. 이는 k8s와 결합하여 나온 MSA 아키텍처에서 node.js가 spring에 비해선 유리하다.
+  - 트래픽이 몰릴 경우에는 node.js 서버만 늘려주면 된다.
+  - 아무것도 하지 않는 Java Spring은 400MB 가량의 Memory를 사용하는데 반해, Node.js는 25MB 정도의 Memory 만을 사용
+- 이런 인프라의 개선 뿐만 아니라 테스트 프레임워크(Jest, Mocha), 타입 제공(Typescript), DI/IoC 기반 개발(next.js) 도입으로 백엔드 영역이 좋아지는 상황
+- 하지만, 아직 java spring의 안정성을 대체하기엔 이르다. 안정화 작업이 필요!
+- [Node.js VS Java Spring](https://medium.com/naverfinancial/node-js-vs-java-spring-c4699565918e)
