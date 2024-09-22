@@ -27,3 +27,13 @@
 - 이를 보면, 전략패턴과 유사해보이지만 상태 메소드에 context 자신을 넘기는 부분이 다르다.
   - 객체 관계를 보면 전략 패턴에서 각 전략들은 서로와 컨텍스트를 모르지만, 상태 팬터에서 각 상태들은 서로하고 컨텍스트를 모두 안다.
 - [유튜브 영상 자료](https://www.youtube.com/watch?v=278vXJkgXoY)
+
+# 오픈 소스 기여하는 방법
+- issue나 스스로 찾은 불편함을 개선하여 기여한다.
+- 난이도 낮은 오픈소스 기여 방법
+- CI/CD, Dockerfile 코드 개선
+  - 테스트 코드 추가 (프로젝트에 coveralls 툴이 있다면, 테스트 코드가 없는 methods를 찾기 수월)
+  - 초보자용 issue 키워드 참조
+    - `good-first-issue`, `first-timer-only`, `low-haning-fruit` 
+- [open source 기여 입문 팁](https://velog.io/@skynet/%EC%98%A4%ED%94%88%EC%86%8C%EC%8A%A4-%EA%B8%B0%EC%97%AC-%EC%9E%85%EB%AC%B8)
+- [open source 겨여 방법](https://velog.io/@youngjun_10/Github-%EC%98%A4%ED%94%88%EC%86%8C%EC%8A%A4-%EA%B8%B0%EC%97%AC%ED%95%98%EA%B8%B0)
