@@ -47,3 +47,23 @@
 # BFS, DFS 알고리즘을 웹 서비스 실무에서 사용하는 경우가 있을까?
 - 소셜 네트워크 서비스에서 그래프 탐색, 카테고리 트리 /  메뉴 구조 / 문서 구조 등의 트리 구조 탐색, 네비게이션 경로 탐색, 의존성 작업 스케줄링, 크롤러
 - [chat GPT: BFS, DFS 알고리즘을 웹 서비스 실무에서 사용하는 경우가 있을까?](https://chatgpt.com/share/66f000ca-05ec-800f-ac00-c522e5675432)
+
+# 템플릿 패턴 vs 템플릿 콜백 패턴 vs 전략 패턴
+- 세 가지 패턴은 기본적으로 논리 흐름을 담당하는 Context(or Template)와 특정한 기능을 정의한 Strategy로 나뉜다.
+- 이런 공통점이 있지만 3가지의 구분은 전략을 객체 지향에서 Context와 Strategy를 어떤 단위로 구현할 것인가로 갈린다.
+- 템플릿 패턴
+  - 객체 자체가 Context를 의미하며 특정 메소드가 Strategy가 된다.
+  - Strategy는 전략에 따라 변경되어야 하기 때문에 추상 클래스로 선언되며 상속을 통해서 전략을 정의할 수 있다.
+- 텀플릿 콜백 패턴
+  - 하나의 특정 메소드가 Context가 되며 넘겨주는 콜백 함수인 매개변수가 전략에 해당한다.
+  - 템플릿 패턴과의 차이는 Context가 메소드 level로 내려온다는 것이다.
+- 전략 패턴
+  - 전략 패턴은 템플릿 패턴 처럼 하나의 객체가 Context를 대표한다.
+  - 전략을 인터페이스나 상속으로 구현할 수 있으며 Context 객체는 전략을 합성을 통해 가지고 있다.
+  - 의존성 주입을 통해서 어떤 전략을 사용할지 결졍해줄 수 있다.
+
+# 질문 리스트
+- Command 패턴은 무엇일까?
+- Visitor 패턴은 무엇일까?
+- 이벤트 큐 vs 메세지 큐
+  - [[Architecture] 메시지 브로커와 이벤트 브로커 - 메시지와 이벤트 그리고 RabbitMQ 와 Kafka](https://velog.io/@beberiche/Architecture-%EB%A9%94%EC%8B%9C%EC%A7%80-%EB%B8%8C%EB%A1%9C%EC%BB%A4%EC%99%80-%EC%9D%B4%EB%B2%A4%ED%8A%B8-%EB%B8%8C%EB%A1%9C%EC%BB%A4-%EB%A9%94%EC%8B%9C%EC%A7%80%EC%99%80-%EC%9D%B4%EB%B2%A4%ED%8A%B8-%EA%B7%B8%EB%A6%AC%EA%B3%A0-RabbitMQ-%EC%99%80-Kafka)
