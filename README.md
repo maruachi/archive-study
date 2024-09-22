@@ -43,4 +43,7 @@
 - Adapter, Adaptee, Target interface가 존재한다.
 - 클라이언트에서 Target Interface로 Adaptee의 인터페이스를 통일 시키고 싶을 때 Adapter를 중간에 두어 Target Interface인 척 사용할 수 있다.
 - 구현은 Adapter는 Target Interface를 상속 받아서 Adapter 내부에서 Adaptee의 기능을 Target Interface 기준으로 재설계 해주면 된다.
-  
+
+# BFS, DFS 알고리즘을 웹 서비스 실무에서 사용하는 경우가 있을까?
+- 소셜 네트워크 서비스에서 그래프 탐색, 카테고리 트리 /  메뉴 구조 / 문서 구조 등의 트리 구조 탐색, 네비게이션 경로 탐색, 의존성 작업 스케줄링, 크롤러
+- [chat GPT: BFS, DFS 알고리즘을 웹 서비스 실무에서 사용하는 경우가 있을까?](https://chatgpt.com/share/66f000ca-05ec-800f-ac00-c522e5675432)
