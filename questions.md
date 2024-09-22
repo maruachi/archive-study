@@ -73,7 +73,7 @@
 - 대신에 node.js는 가볍다는 장점이 있다. 이는 k8s와 결합하여 나온 MSA 아키텍처에서 node.js가 spring에 비해선 유리하다.
   - 트래픽이 몰릴 경우에는 node.js 서버만 늘려주면 된다.
   - 아무것도 하지 않는 Java Spring은 400MB 가량의 Memory를 사용하는데 반해, Node.js는 25MB 정도의 Memory 만을 사용
-- 이런 인프라의 개선 뿐만 아니라 테스트 프레임워크(Jest, Mocha), 타입 제공(Typescript), DI/IoC 기반 개발(next.js) 도입으로 백엔드 영역이 좋아지는 상황
+- 이런 인프라의 개선 뿐만 아니라 테스트 프레임워크(Jest, Mocha), 타입 제공(Typescript), DI/IoC 기반 개발(nest.js) 도입으로 백엔드 영역이 좋아지는 상황
 - 하지만, 아직 java spring의 안정성을 대체하기엔 이르다. 안정화 작업이 필요!
 - [Node.js VS Java Spring](https://medium.com/naverfinancial/node-js-vs-java-spring-c4699565918e)
 
