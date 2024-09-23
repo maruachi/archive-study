@@ -77,8 +77,18 @@
 - 하지만, 아직 java spring의 안정성을 대체하기엔 이르다. 안정화 작업이 필요!
 - [Node.js VS Java Spring](https://medium.com/naverfinancial/node-js-vs-java-spring-c4699565918e)
 
+# Command 패턴은 무엇일까?
+- 특정 객체의 기능 수행을 Command와 Invoker 위임하여 실행할 수 있도록하는 디자인 패턴
+- Command의 실행은 Invoker가 담당한다.
+- 실 사용 예시
+  - 작업을 큐에 넣고 실행해야 할 때
+  - Undo/Redo 기능 구현
+  - 작업 실행의 추상화 필요
+  - 트랜잭션 기반 시스템에서 여러 작업을 하나로 묶을 때
+  - UI 작업의 캡슐화
+- [Chat GPT 답변](https://chatgpt.com/share/66f1e2aa-9590-800f-bea1-a13ed184f8ac)
+
 # 질문 리스트
-- Command 패턴은 무엇일까?
 - Visitor 패턴은 무엇일까?
 - 이벤트 큐 vs 메세지 큐
   - [[Architecture] 메시지 브로커와 이벤트 브로커 - 메시지와 이벤트 그리고 RabbitMQ 와 Kafka](https://velog.io/@beberiche/Architecture-%EB%A9%94%EC%8B%9C%EC%A7%80-%EB%B8%8C%EB%A1%9C%EC%BB%A4%EC%99%80-%EC%9D%B4%EB%B2%A4%ED%8A%B8-%EB%B8%8C%EB%A1%9C%EC%BB%A4-%EB%A9%94%EC%8B%9C%EC%A7%80%EC%99%80-%EC%9D%B4%EB%B2%A4%ED%8A%B8-%EA%B7%B8%EB%A6%AC%EA%B3%A0-RabbitMQ-%EC%99%80-Kafka)
