@@ -90,5 +90,7 @@
 
 # 질문 리스트
 - Visitor 패턴은 무엇일까?
+- Iterator 패턴은 무엇일까?
+  - [이터레이터 패턴](https://velog.io/@cham/Design-Pattern-%EC%9D%B4%ED%84%B0%EB%A0%88%EC%9D%B4%ED%84%B0-%ED%8C%A8%ED%84%B4-iterator-pattern)
 - 이벤트 큐 vs 메세지 큐
   - [[Architecture] 메시지 브로커와 이벤트 브로커 - 메시지와 이벤트 그리고 RabbitMQ 와 Kafka](https://velog.io/@beberiche/Architecture-%EB%A9%94%EC%8B%9C%EC%A7%80-%EB%B8%8C%EB%A1%9C%EC%BB%A4%EC%99%80-%EC%9D%B4%EB%B2%A4%ED%8A%B8-%EB%B8%8C%EB%A1%9C%EC%BB%A4-%EB%A9%94%EC%8B%9C%EC%A7%80%EC%99%80-%EC%9D%B4%EB%B2%A4%ED%8A%B8-%EA%B7%B8%EB%A6%AC%EA%B3%A0-RabbitMQ-%EC%99%80-Kafka)
