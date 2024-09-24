@@ -88,6 +88,47 @@
   - UI 작업의 캡슐화
 - [Chat GPT 답변](https://chatgpt.com/share/66f1e2aa-9590-800f-bea1-a13ed184f8ac)
 
+# javascript export, import, 함수 선언
+1. export와 import
+- js 파일은 하나의 모듈이다.
+- 모듈을 다른 모듈에서 참조가 가능한데, 참조하는 방식이 export, import를 통해서 이루어진다.
+- default export와 named export가 존재하고 모듈 당 딱 한 개의 default export만 존재해야 한다.
+- import 시에 default export는 { }로 감싸는 거 없이 참조 가능하며, named export된 요소들은 { } 내에 선언하여 가져올 수 있다
+
+```js
+//person.js
+const person = { name: 'Max'};
+
+export default person
+
+//utility.js
+export const clean = () => { ... };
+export const baseData = 10;
+
+//app.js
+import person from './person.js'
+import prs from './person.js'
+
+import {baseData} from './utility.js'
+import {clean} from './utility.js'
+```
+
+2. 함수 선언
+
+```js
+function add(a, b){
+  return a+b;
+};
+
+var add = function (a, b){
+  return a+b;
+};
+
+var add = (a, b) =>{
+  return a+b;
+};
+```
+
 # 질문 리스트
 - Visitor 패턴은 무엇일까?
 - Iterator 패턴은 무엇일까?
