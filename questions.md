@@ -129,6 +129,25 @@ var add = (a, b) =>{
 };
 ```
 
+# javascript 특징을 보여주는 문법이 무엇이 있을까?
+- null vs undefined
+  - null은 값이 비어 있다는 것을 의도한 것이도 undefined는 의도와 무관한 것이다.
+- in loop vs of loop
+  - in loop: 객체의 열거 가능한 속성을 순회할 때 사용
+  - 반복 가능한 객체의 값을 순회할 때 사용
+- async와 await 그리고 Promise 객체
+  - async 함수는 항상 Promise 객체를 반환하고 await 시에 Promise가 해결될 때까지 기다린다. 
+- Optional chaining
+  - obj?. 방식으로 ?와 함께 chaining하는 문법으로 체이닝 시에 객체의 속성이 존재하지 않으면 undefined을 반환한다.
+- Spread syntax
+  - `...` 배열이나 객체의 값을 펼칠 때 사용한다.
+- 세미콜론 자동 삽입 기능
+  - 세미콜론을 붙이지 않아도 javascript는 잘 동작한다. 하지만 이로 인해 예기치 못한 문제가 발생할 수 있으므로 세미콜론은 꼭 붙이는 게좋다. 
+
+# webpack, vite와 같은 모듈 번들러는 왜 사용할까?
+- 모듈별로 나눠져 있는 html, css, js 파일을 하나의 파일로 합쳐주는 역할을 수행한다.
+- 웹 서비스 시에 모듈별로 파일을 나워서 서비스하게 되면 네트워크 요청이 많아져 성능 저하를 가져다 주기 때문에 모듈 번들러로 하나의 파일로 합친다.
+
 # 질문 리스트
 - Visitor 패턴은 무엇일까?
 - Iterator 패턴은 무엇일까?
