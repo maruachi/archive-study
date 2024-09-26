@@ -150,6 +150,11 @@ var add = (a, b) =>{
 - webpack은 일반적으로 build, vite는 dev-server를 위해서 사용한다. 그 이유는 vite가 요청에 필요한 모듈만 번들링을 시도하기 때문에 반응이 빠르기 때문이다.
   - [회사 vue 프로젝트 vite 적용하기](https://eddie-sunny.tistory.com/107)
 
+# 팩토리 메서드 패턴 vs 추상 팩토리 패턴
+- 팩토리 메서드 패턴: 하위 객체의 생성을 인터페이스 팩토리 구현체에게 위임하는 것
+- 추상 팩토리 패턴: 서로 다른 객체에 대한 생성을 추상 팩토리 객체의 구현체에게 위임하는 것
+- [[디자인 패턴] 팩토리 메서드 패턴 vs 추상 팩토리 패턴](https://velog.io/@quden04/%EB%94%94%EC%9E%90%EC%9D%B8-%ED%8C%A8%ED%84%B4-%ED%8C%A9%ED%86%A0%EB%A6%AC-%EB%A9%94%EC%84%9C%EB%93%9C-%ED%8C%A8%ED%84%B4-vs-%EC%B6%94%EC%83%81-%ED%8C%A9%ED%86%A0%EB%A6%AC-%ED%8C%A8%ED%84%B4)
+
 # 질문 리스트
 - Visitor 패턴은 무엇일까?
 - Iterator 패턴은 무엇일까?
