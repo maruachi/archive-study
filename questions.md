@@ -155,6 +155,13 @@ var add = (a, b) =>{
 - 추상 팩토리 패턴: 서로 다른 객체에 대한 생성을 팩토리 객체의 구현체에게 위임하는 것
 - [[디자인 패턴] 팩토리 메서드 패턴 vs 추상 팩토리 패턴](https://velog.io/@quden04/%EB%94%94%EC%9E%90%EC%9D%B8-%ED%8C%A8%ED%84%B4-%ED%8C%A9%ED%86%A0%EB%A6%AC-%EB%A9%94%EC%84%9C%EB%93%9C-%ED%8C%A8%ED%84%B4-vs-%EC%B6%94%EC%83%81-%ED%8C%A9%ED%86%A0%EB%A6%AC-%ED%8C%A8%ED%84%B4)
 
+# vue.js vue-router 개념
+- 라우터(router): 네트워크간에 데이터를 전송하는 장치
+- 라우팅(routing): 최적의 경로를 찾는 프로세스
+- 라우트(route): 서로 다른 네트워크 간 데이터를 전송하고 전송한 데이터를 받는 경로
+- vue-router는 client-side routing의 개념을 가지고 있다. Server-side routing은 url 별로 page를 mapping 시키는데, vue.js router는 브라우저 내에서 page 맴핑을 구현할 수 있게 해준다.
+- [stack overflow 답변](https://stackoverflow.com/questions/10190215/what-is-client-side-routing-and-how-is-it-used)
+
 # 질문 리스트
 - Visitor 패턴은 무엇일까?
 - Iterator 패턴은 무엇일까?
