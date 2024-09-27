@@ -162,6 +162,23 @@ var add = (a, b) =>{
 - vue-router는 client-side routing의 개념을 가지고 있다. Server-side routing은 url 별로 page를 mapping 시키는데, vue.js router는 브라우저 내에서 page 맴핑을 구현할 수 있게 해준다.
 - [stack overflow 답변](https://stackoverflow.com/questions/10190215/what-is-client-side-routing-and-how-is-it-used)
 
+# vue.js axios repaonse.data 내의 List (spring) 값을 반응형 객체에 할당하기
+```js
+export default setup(){
+  views = ref(Array())
+  onMounted(async ()=>{
+    const response = await getSomethingFromServer(); // getSomethingFromServer: Rest API
+    const views.value = response.data.views
+  })
+  return {
+    views
+  }
+}
+```
+- getSomethingFromServer() 함수는 api를 wrap하고 있다.
+- onMounted에서 api 호출이 이루어지는 이유는 setup 함수 내에서 promise로 객체를 생성할 수 없기 때문이다. (why?)
+- response.data 내 List 값을 Array로 변환해서 제공하기 때문에 ref(Array()) 값으로 반응형 객체를 정의한다. 
+
 # 질문 리스트
 - Visitor 패턴은 무엇일까?
 - Iterator 패턴은 무엇일까?
