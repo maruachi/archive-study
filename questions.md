@@ -177,12 +177,31 @@ export default setup(){
 ```
 - getSomethingFromServer() 함수는 api를 wrap하고 있다.
 - onMounted에서 api 호출이 이루어지는 이유는 setup 함수 내에서 promise로 객체를 생성할 수 없기 때문이다. (why?)
-- response.data 내 List 값을 Array로 변환해서 제공하기 때문에 ref(Array()) 값으로 반응형 객체를 정의한다. 
+- response.data 내 List 값을 Array로 변환해서 제공하기 때문에 ref(Array()) 값으로 반응형 객체를 정의한다.
+- Array()로 선안하고 Array() 내부 변경점이 발생해도 vue는 반응형 상태를 내부 깊숙이 추적하으로 변경된 상태를 반여할 수 있다.
+- [[VUE] 배열에 값 추가 또는 삭제하기(push, splice)](https://ssjeong.tistory.com/entry/VUE-%EB%B0%B0%EC%97%B4%EC%97%90-%EA%B0%92-%EC%B6%94%EA%B0%80-%EB%98%90%EB%8A%94-%EC%82%AD%EC%A0%9C%ED%95%98%EA%B8%B0push-splice)
+
+# vue.js reactive vs ref
+- 객체, 배열 그리고 Map이나 Set과 같은 컬렉션 유형에만 작동함. string, number 또는 boolean 과 같은 기본 유형에는 사용할 수 없다.
+- string, number 또는 boolean 과 같은 기본 유형에도 사용 가능하다.
+- [reactive vs ref 성능차이](https://changjoo-park.github.io/write/guide/vue/performance-ref-reactive.html#_10%E1%84%86%E1%85%A1%E1%86%AB%E1%84%80%E1%85%A2-%E1%84%89%E1%85%A2-%E1%84%83%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%90%E1%85%A5-%E1%84%86%E1%85%A1%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%E1%84%80%E1%85%B5)
+
+# javascript concat vs push
+- concat은 배열 연결
+- push는 요소 추가
+- push 시에 Spread syntax(...)를 사용하면 concat과 동일한 기능을 구현 가능하다.
+
+# javascript [] vs new Array()
+- 둘 다 배열 타입과 관련한 차이가 없다
+- []가 선호도가 높은데 간결성과 성능 우수성 그리고 문법 안정성 때문이다.
+- [new Array() vs []](https://stackoverflow.com/questions/1800594/in-javascript-why-is-preferred-over-new-array)
+- [성능 비교](https://stackoverflow.com/questions/7375120/why-is-arr-faster-than-arr-new-array)
 
 # 질문 리스트
 - Visitor 패턴은 무엇일까?
 - Iterator 패턴은 무엇일까?
   - [이터레이터 패턴](https://velog.io/@cham/Design-Pattern-%EC%9D%B4%ED%84%B0%EB%A0%88%EC%9D%B4%ED%84%B0-%ED%8C%A8%ED%84%B4-iterator-pattern)
+- 데이터베이스 데이블 Migration 방법이 무엇이 있을까?
 - vue.js 빌드 방식은 어떻게 진행될까?
 - vue.js에서 frontend api 관리를 실무에서 가장 많이 쓰는 방법은 무엇일까?
 - javascript async와 await
