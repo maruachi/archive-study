@@ -130,3 +130,22 @@ Key를 참조할 때만 Key-value가 살아있어야 한다면, WeakHashMap으�
 리스너와 콜백을 명확히 해지해주지 않는 것도 메모리 누수의 원인이다. WeakReference로 등록할 경우에 GC의 대상이 되게 할 수 있다.
 
 *만약 어떤 객체가 WeakReference만 가지고 있다면, 가비지 컬렉터는 그 객체를 더 이상 사용되지 않는다고 판단
+
+# Item 8. finalizer와 cleaner 사용을 피하라
+
+## finalizer와 cleaner란?
+- finalizer와 cleaner는 모두 GC에 의해 실행되는 리소스 해제 로직이다.
+  - C++ destructor와 달리, 비메모리 자원의 해제가 아닌 메모리 자원에 대한 해제를 담당한다.
+
+## finalizer와 cleaner를 쓰지 말아야 할 이유
+- GC에 의존하는 특성상 언제 리소스가 해제될지 모르기 때문에 메모리 누수의 원인이 되므로 기피하는 것이 좋다.
+  - 락 해제를 finalizer와 cleaner가 담당하면 락은 어떤 시점에 해제될지 모르고 락과 연관된 분산 시스템은 문제가 될 것이다.
+- 그리고 성능의 이슈가 있는데 단순히 finalizer, cleaner 안정망 추가로 객체 생성, 정리, 파과 과정이 약 5배~50배 가량 느려진다.
+- finalizer 예외 발생 시에 자원 회수 로직을 하다 말기 때문에 훼손된 객체를 남긴다. 대신 cleaner는 자신의 스레드를 통제하기 때문에 예외처리 가능하다.
+  - 이런 이유로 쓸 꺼면 cleaner를 쓰는 것이 낫다.
+- 결국에는 자원 해제는 finalizer와 cleaner보다 try-with-resource 구문과 함께 Autoclosable을 같이 쓰는 것이 좋다.
+
+## finalizer와 cleaner를 사용할 때는 언제인가?
+- 2차 방어로직으로 사용할 때 -> FileInputStream, FileOutputStream, ThreadPoolExecutor
+- 네이티브 피어(native peer) 다른 언어로 작성된 코드를 가진 객체일 때는 해당 언어에 대한 자원 해제를 GC가 담당하지 못하기 때문에 finalizer와 cleaner에 회수 로직을 작성한다.
+  - 하지만 성능 이슈가 클 경우에는 Autoclosable의 close()를 사용해야 한다.
