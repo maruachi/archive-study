@@ -197,13 +197,21 @@ export default setup(){
 - [new Array() vs []](https://stackoverflow.com/questions/1800594/in-javascript-why-is-preferred-over-new-array)
 - [성능 비교](https://stackoverflow.com/questions/7375120/why-is-arr-faster-than-arr-new-array)
 
+# vue.js vuetify에서 container 내의 요소를 배치하는 방법
+- v-container는 layout을 잡을 때 많이 사용한다.
+  - v-row와 v-col로 내부 레이아웃 배치를 한다.
+- v-responsive는 미디어 콘텐츠가 다양한 화면 크기에 맞춰 반응형으로 조정
+
+# vuetify card vs panel
+- Panel: 여러 UI 요소를 그룹화하고 논리적인 구분을 제공하는 컨테이너로 사용되며, 비교적 단순한 디자인을 가집니다.
+- Card: 정보를 독립적으로 표시하고 좀 더 시각적으로 강조된 스타일을 가지며, 개별적인 정보 블록을 표시하는 데 적합합니다.
+- https://chatgpt.com/share/66f7efbe-aa20-800f-b11e-d00a44cf622e
+
 # 질문 리스트
 - Visitor 패턴은 무엇일까?
 - Iterator 패턴은 무엇일까?
   - [이터레이터 패턴](https://velog.io/@cham/Design-Pattern-%EC%9D%B4%ED%84%B0%EB%A0%88%EC%9D%B4%ED%84%B0-%ED%8C%A8%ED%84%B4-iterator-pattern)
 - 데이터베이스 데이블 Migration 방법이 무엇이 있을까?
-- vue.js 빌드 방식은 어떻게 진행될까?
 - vue.js에서 frontend api 관리를 실무에서 가장 많이 쓰는 방법은 무엇일까?
-- javascript async와 await
 - 이벤트 큐 vs 메세지 큐
   - [[Architecture] 메시지 브로커와 이벤트 브로커 - 메시지와 이벤트 그리고 RabbitMQ 와 Kafka](https://velog.io/@beberiche/Architecture-%EB%A9%94%EC%8B%9C%EC%A7%80-%EB%B8%8C%EB%A1%9C%EC%BB%A4%EC%99%80-%EC%9D%B4%EB%B2%A4%ED%8A%B8-%EB%B8%8C%EB%A1%9C%EC%BB%A4-%EB%A9%94%EC%8B%9C%EC%A7%80%EC%99%80-%EC%9D%B4%EB%B2%A4%ED%8A%B8-%EA%B7%B8%EB%A6%AC%EA%B3%A0-RabbitMQ-%EC%99%80-Kafka)
