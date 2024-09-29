@@ -149,3 +149,9 @@ Key를 참조할 때만 Key-value가 살아있어야 한다면, WeakHashMap으�
 - 2차 방어로직으로 사용할 때 -> FileInputStream, FileOutputStream, ThreadPoolExecutor
 - 네이티브 피어(native peer) 다른 언어로 작성된 코드를 가진 객체일 때는 해당 언어에 대한 자원 해제를 GC가 담당하지 못하기 때문에 finalizer와 cleaner에 회수 로직을 작성한다.
   - 하지만 성능 이슈가 클 경우에는 Autoclosable의 close()를 사용해야 한다.
+
+# Item 9. try-finally보다는 try-with-resources를 사용하라.
+- try-finally의 기존의 문제점
+  - 기기에 물리적 문제가 있을 때 try의 예외가 finally의 예외에게 잡아 먹힌다(?) -> 디버깅을 어렵게 한다 (이해가 안 됨)
+  - 해제해야 되는 자원이 여러개 일 때 try-finally 중첩 구문이 되어 코다가 복잡해진다.
+- try-with-resources 구문으로 위 문제를 해결할 수 있다.
