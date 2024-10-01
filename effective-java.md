@@ -150,8 +150,32 @@ Key를 참조할 때만 Key-value가 살아있어야 한다면, WeakHashMap으�
 - 네이티브 피어(native peer) 다른 언어로 작성된 코드를 가진 객체일 때는 해당 언어에 대한 자원 해제를 GC가 담당하지 못하기 때문에 finalizer와 cleaner에 회수 로직을 작성한다.
   - 하지만 성능 이슈가 클 경우에는 Autoclosable의 close()를 사용해야 한다.
 
-# Item 9. try-finally보다는 try-with-resources를 사용하라.
+# Item 9. try-finally보다는 try-with-resources를 사용하라
 - try-finally의 기존의 문제점
   - 기기에 물리적 문제가 있을 때 try의 예외가 finally의 예외에게 잡아 먹힌다(?) -> 디버깅을 어렵게 한다 (이해가 안 됨)
   - 해제해야 되는 자원이 여러개 일 때 try-finally 중첩 구문이 되어 코다가 복잡해진다.
 - try-with-resources 구문으로 위 문제를 해결할 수 있다.
+
+# Item 10. equals는 일반 규약을 지켜 재정의하라
+- equals 재정의가 필요하지 않는 상황이라면 최대한 피하는 게 좋다
+  - 각 인스턴스가 본질적으로 고유하다
+  - 인스턴스의 논리적 동치성을 검사할 일이 없다
+  - 상위 클래스에서 재정의한 equals가 하위 클래스에도 딱 들어맞는다
+  - 클래스가 private이거나 package-private이고 equals 메서드를 호출할 일이 없다
+- equals 메서드를 구현한다면 아래와 같은 동치 관계를 만족해야 한다.
+  - 반사성(reflexivity): x.equals(x) == true
+  - 대칭성(symmetry): x.equals(y) == y.equals(x)
+  - 추이성(transitivity): x.equals(y) == y.equals(z) == true -> x.equals(z) == true
+  - 일관성(consistency): x.equals(y) 여러번 수행하더라도 결과가 동일
+  - null-아님: x.equals(null) == false
+- equals 올바른 재정의
+  1. 자기 참조인지 검사
+  2. 자기 타입이지 검사
+  3. 자기 타입으로 형변환
+  4. 핵심 필드 일치여부 검사
+  *hash code 재정의 필요
+- equals에서의 리스코프 치환 원칙
+  - Point의 하위 클래스는 정의상 여전히 Point이므로 어디서든 Point로써 활용될 수 있어야 한다.
+  - 하위 클래스에서 equals가 정상 동작하기 위해서는 getClass가 아닌 instanceof 기반으로 eqauls를 구현해야 한다.
+  - field 값 추가는 리스코프 치환 원칙을 어기기 쉽다. (그 예로 java.sql.timestamp, java.util.date가 있다.)
+  - 대신에 상속 대신에 조합을 써서 우회할 수 있다.
