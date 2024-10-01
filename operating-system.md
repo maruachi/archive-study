@@ -19,6 +19,7 @@
   - data section: global 변수, statci 변수가 저장된 영역
   - heap section: 런타임 동적 할당 영역
   - stack section: 함수의 local 변수, 파라미터, return address 저장 영역
+
 ![image](https://github.com/user-attachments/assets/6338c241-30a3-47fe-8551-eae997c0e0e7)
 
 ## 프로세스의 상태와 생명주기
@@ -27,6 +28,7 @@
 - waiting: I/O 작업을 위해 대기와 같이 실행을 잠시 멈추는 단계
 - ready: waiting이 끝나고 시작하기 전 준비 단계 (ready -> runing scheduler dispatch하여 runing 상태로 전환)
 - terminated: 프로세스 실행 종료
+
 ![image](https://github.com/user-attachments/assets/cb2f2151-5976-4f87-a54d-439a77c5631a)
 
 ## PCB(Process Control Block) or TCB (Task Control Block)
@@ -56,3 +58,23 @@
   - 프로세스 종료시에 자원을 OS에게 반환
 - zombie 프로세스: 부모 프로세스는 wait하지 않고 자식이 계속 남아서 돌고 있는 경우
 - orphan 프로세스: 부모 프로세스가 종료됐지만 자식이 게속 남아서 돌고 있은 경우
+
+## 프로세스 소통
+- cooperating process의 소통은 inter-process communication (IPC)라고 불른다.
+- IPC를 구현하는 방법는 공유 메모리와 메세지 패싱 두 가지가 존재한다.
+- Producer-Consumer Problem
+  - Producer-Consumer Problem은 소프트웨어 설계에서 자주 등장하는 패턴이다.
+    - Producer는 작업을 생성하고 Consumer는 작업을 처리한다.
+    - Producer, Consumer 패턴은 프로세스 소통이 필요한 전형적인 예이다.
+- IPC 구현
+  - shared memory -> 공유 buffer가 작업 대기열과 같은 역할을 한다.
+    - 단점: shared memory를 application 단에서 관리해야 함
+  - message passing -> send(), receive() system call로 작업대기열을 OS가 처리
+    - direct vs indirect
+      - direct: communication links -> send(P, message) receive(Q, message)
+        - 하나의 링크만 가능
+      - indirect: mailboxes(ports) -> send(message), receive(message)
+        - 하나의 프로세스가 여러개의 링크 가능
+        - OS에 필요한 API: new mailbox, send/receive through mailbox, delete mailbox
+  - blocking send blocking receive vs non-blocking send non-blocking receive
+    - send, receive 시 응답을 무한정 기달려야 하나 아니면 동시처리가 되냐 그 차이
