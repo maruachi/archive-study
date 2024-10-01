@@ -205,7 +205,20 @@ export default setup(){
 # vuetify card vs panel
 - Panel: 여러 UI 요소를 그룹화하고 논리적인 구분을 제공하는 컨테이너로 사용되며, 비교적 단순한 디자인을 가집니다.
 - Card: 정보를 독립적으로 표시하고 좀 더 시각적으로 강조된 스타일을 가지며, 개별적인 정보 블록을 표시하는 데 적합합니다.
-- https://chatgpt.com/share/66f7efbe-aa20-800f-b11e-d00a44cf622e
+- [chat-gpt panel vs card](https://chatgpt.com/share/66f7efbe-aa20-800f-b11e-d00a44cf622e)
+
+# vue.js MVVM pattern
+- MVVM: Model, View, ViewModel
+- Model: 데이터와 비지니스 로직을 처리
+- View: 사용자에게 보여지는 화면을 처리
+- ViewModel: View를 표현하기 위해서 만들어진 View만을 위한 Model -> View와 1대1 Mapping 관계에 있다.
+- Vue는 ViewModel 집중적인 프레임워크다. directives와 DOM Listeners을 통해 ViewModel을 구현하며 Model과 View를 연결해주는 역할을 한다.
+- ViewModel은 Command 패턴으로 ViewModel에 대한 처리를 추상화여 일괄처리
+
+# MVVM vs MVC
+
+![image](https://github.com/user-attachments/assets/6820076b-792c-48e2-897b-31d8f64ae766)
+
 
 # 질문 리스트
 - Visitor 패턴은 무엇일까?
