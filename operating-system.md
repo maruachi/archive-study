@@ -78,3 +78,18 @@
         - OS에 필요한 API: new mailbox, send/receive through mailbox, delete mailbox
   - blocking send blocking receive vs non-blocking send non-blocking receive
     - send, receive 시 응답을 무한정 기달려야 하나 아니면 동시처리가 되냐 그 차이
+
+## IPC 실 예시
+- Shared Memory: POSIX Shared Memory
+  - Portable Operating System Interface -> 운영체제 표준화하려는 시도
+  - memory-mapped files: 메모리에 할당된 파일
+- Message Passing: Pipes
+  - pipe(), fork()와 같이 사용하여 구현
+  - 프로세스를 연결하난 pipe를 통해서 read, write로 데이터 통신이 가능하다
+- Sockets
+  - IP address(컴퓨터), port number(프로세스)를 특정하여 다른 컴퓨터의 프로세스끼리 통신하는 방법
+  - Socket class: connection-oriented (TCP)
+  - DatagramSocket class: connectionless (UDP)
+  - MulticastSocket class: multiple recipients
+- RPCs(Remote Procedure Calls)
+  - 원격 프로세스의 함수를 호출하는 기능
