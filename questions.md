@@ -219,12 +219,13 @@ export default setup(){
 
 ![image](https://github.com/user-attachments/assets/6820076b-792c-48e2-897b-31d8f64ae766)
 
-
 # 질문 리스트
 - Visitor 패턴은 무엇일까?
 - Iterator 패턴은 무엇일까?
   - [이터레이터 패턴](https://velog.io/@cham/Design-Pattern-%EC%9D%B4%ED%84%B0%EB%A0%88%EC%9D%B4%ED%84%B0-%ED%8C%A8%ED%84%B4-iterator-pattern)
 - 데이터베이스 데이블 Migration 방법이 무엇이 있을까?
-- vue.js에서 frontend api 관리를 실무에서 가장 많이 쓰는 방법은 무엇일까?
 - 이벤트 큐 vs 메세지 큐
   - [[Architecture] 메시지 브로커와 이벤트 브로커 - 메시지와 이벤트 그리고 RabbitMQ 와 Kafka](https://velog.io/@beberiche/Architecture-%EB%A9%94%EC%8B%9C%EC%A7%80-%EB%B8%8C%EB%A1%9C%EC%BB%A4%EC%99%80-%EC%9D%B4%EB%B2%A4%ED%8A%B8-%EB%B8%8C%EB%A1%9C%EC%BB%A4-%EB%A9%94%EC%8B%9C%EC%A7%80%EC%99%80-%EC%9D%B4%EB%B2%A4%ED%8A%B8-%EA%B7%B8%EB%A6%AC%EA%B3%A0-RabbitMQ-%EC%99%80-Kafka)
+- # vue.js에서 frontend api 관리 방법
+  - [[번역]Vue 프로젝트를 위한 API Factories 설계](https://velog.io/@taewo/%EB%B2%88%EC%97%ADVue-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%EB%A5%BC-%EC%9C%84%ED%95%9C-API-Factories-%EC%84%A4%EA%B3%84)
+  - [[Vue의 현실] API Interface 만들기](https://velog.io/@uriyang_/Vue%EC%9D%98-%ED%98%84%EC%8B%A4-API-inteface-2)
