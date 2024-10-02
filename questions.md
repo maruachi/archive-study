@@ -219,6 +219,14 @@ export default setup(){
 
 ![image](https://github.com/user-attachments/assets/6820076b-792c-48e2-897b-31d8f64ae766)
 
+# Python Garbage Collector 동작 방식
+
+- 기본적으로 레퍼런스 카운팅하여 갈비지 컬렉션을 수행
+- 레퍼런스 카운팅이 불가능한 순환 참조 또한 감지하여 갈비지 컬렉션을 수행한다.
+- generation(세대), threshold(임계값)로 가비지 컬렉션의 실행 기준으로 삼는다.
+  - 0세대, 1세대, 2세대로 나뉘며 0세대가 young 2세대로 갈수록 old이다. 0세대를 더 자주 갈비지 컬렉션 하도록 되어 있다.
+  - [Python GC가 작동하는 원리](https://www.winterjung.dev/python-gc/)
+
 # 질문 리스트
 - Visitor 패턴은 무엇일까?
 - Iterator 패턴은 무엇일까?
