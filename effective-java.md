@@ -179,3 +179,11 @@ Key를 참조할 때만 Key-value가 살아있어야 한다면, WeakHashMap으�
   - 하위 클래스에서 equals가 정상 동작하기 위해서는 getClass가 아닌 instanceof 기반으로 eqauls를 구현해야 한다.
   - field 값 추가는 리스코프 치환 원칙을 어기기 쉽다. (그 예로 java.sql.timestamp, java.util.date가 있다.)
   - 대신에 상속 대신에 조합을 써서 우회할 수 있다.
+
+# Item 11. equals를 재정의하려거든 hashcode도 재정의하라
+- equals 객체에서 hashcode를 제대로 재정의 하지 않으면 발생할 수 있는 문제가 크게 두 가지다.
+  - 특정 해쉬 코드로 여러 인스턴스가 몰려 성능 이슈 발생
+    - 해쉬 알고리즘에 따라 데이터 접근의 시간복잡도가 O(1)가 아닌 cardinality에 의존하는 선형 O(n)으로 높아진다.
+    - 핵심 필드를 유지하여 hashcode()가 각 인스턴스 별로 다른 값을 내면 좋다.
+  - equals로 동등성이 보장되지만 hashcode는 다른 값을 내는 경우
+    - 이런 경우 HashMap, HashSet과 같은 자료구조에서 비정상 동작할 수 있다. 
