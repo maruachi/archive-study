@@ -100,7 +100,7 @@ String string = new String("Lucky Vicky") // 매번 새로운 객체를 생성
 String string = "Lucky Vicky" // String Pool에 인스턴스를 이후에 재사용 가능
 ```
 
-2. 정규 표현식 패턴 인스턴스 생성
+2. 기본 타입 형변환으로 객체 생성
 ```java
 Long sum = 0L
 for (int i = 0; i < 100; i++){
@@ -108,6 +108,31 @@ for (int i = 0; i < 100; i++){
 }
 ```
 박싱된 기본 타입일 때 형변환으로 매번 Long 객체를 생성하는 비효율이 존재한다. 이때는 long 기본 타입을 사용할 때 성능 개선의 효과를 볼 수 있다.
+
+3. 정규 표현식 패턴 인스턴스 생성
+
+```java
+static boolean isRomanNumeral(String s) {
+  return s.marches("^(?=.)M*(C[MD] }D?C{0,3})"
+  +  "(X[CL]}L?X{0,3})(I[XV]|V?I{0,3})$");
+}
+```
+
+정규 표현식은 유한 상태 머신으로 변환된다. 간단한 정규 표현식도 유한 상태 머신으로 변환하는 비용이 크기 때문에, 이를 캐싱해두는 것이 성능 상에 이점이 크다.
+
+```java
+public class RomanNumerals {
+    private static final Pattern ROMAN = Pattern.compile("^(?=.)M*(C[MD]|D?C{0,3})" +
+            "(X[CL]|L?X{0,3})(I[XV]|V?I{0,3})");
+
+    static boolean isRomanNumeral(String s) {
+        return ROMAN.matcher(s).matches();
+    }
+}
+```
+`Pattern.compile()`에서 유한 상태 머신을 미리 생성했기 때문에 matches() 호출 시에 새로운 인스턴스를 생성할 필요가 없기에 성능이 개선 됐다.
+
+- [[아이템 06] 불필요한 객체 생성을 피하라](https://github.com/java-squid/effective-java/issues/6)
 
 # Item 7. 다 쓴 객체 참조를 해제하라
 
