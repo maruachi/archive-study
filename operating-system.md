@@ -93,3 +93,40 @@
   - MulticastSocket class: multiple recipients
 - RPCs(Remote Procedure Calls)
   - 원격 프로세스의 함수를 호출하는 기능
+ 
+# 쓰레드와 Concurrency
+
+## Thread
+- a lightweight process
+- a basic unit of cpu utilization
+- 프로세스는 기본적으로 하나의 스레드 실행을 담당한다.
+- 하나의 프로세스가 multi-process 실행 시에 thread 별로 메모리 할당이 필요하다.
+- Thread ID 별로 메모리에 Program counter / Register set / Stack가 별도로 할당된다.
+  - code, data, files 영역은 process 할당된 영역에 그대로 남아 있는다.
+
+## 멀티 스레딩의 장점
+- Responsiveness: 소켓 리스너 구현 예시처럼 반응성이 좋아진다.
+- Resource Sharing: IPC와 달리 thread 끼리는 메모리를 공유하기에 shared-memory, message-passing이 용이하다
+- Economy: process 생성보다 비용이 저렴하다
+- Scalability: 확장 시에 multiprocessor 설계의 이점을 취할 수 있다
+
+## Java에서 Thread 구현
+- 구현 방법
+  - Thread 상속
+    - Thread class 상속 시 다른 객체의 상속을 주지 못하기 때문에 상속 기능을 제한하는 구현 방식이다.
+  - Runable 인터페이스 구현을 통해서 Thread 객체 DI
+  - Runable 타입으로 Lambda 표현식(익명 객체)을 Thread 객체에 DI
+ 
+## Programming Challenges in Multicore systems
+- Identifying tasks: 분리가능한 task 찾는 것에 어려움
+- Balance: 각 task 별로 업무 부담을 분배의 어려움
+- Data splitting: 데이터가 각 독립 코어에 분배의 어려움
+- Data dependency: 각 코어 별로 데이터 의존성을 동기화 필요
+- Testing and debugging: 테스트와 디버깅의 어려움. breakpoint가 특정 thread에서만 동작하기에 나머지 thread의 동작을 예측하기 어렵다
+
+## Amdahl's Law
+- 코어는 무조건 많을수록 좋은 것이 아니다.
+- 예상하기로는 코어의 개수에 비례하여 성능이 빨라질 것으로 기대하지만, 실제로는 성능이 코어 개수 계속해서 증가하면 성능이 수렴하는 것을 보인다
+- speedup <= 1/(S+(1-S)/N)
+  - S: the portion that must be performed serially on a system
+  - N: the number of processing cores
