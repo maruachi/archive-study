@@ -238,6 +238,9 @@ export default setup(){
   - [요구사항 명세서 (Requirements Specification)](https://mklab-co.medium.com/%EC%9E%91%EC%84%B1%EB%B2%95-%EC%9A%94%EA%B5%AC%EC%82%AC%ED%95%AD-%EB%AA%85%EC%84%B8%EC%84%9C-requirements-specification-ad3533d6d5b8)
 - 이벤트 큐 vs 메세지 큐
   - [[Architecture] 메시지 브로커와 이벤트 브로커 - 메시지와 이벤트 그리고 RabbitMQ 와 Kafka](https://velog.io/@beberiche/Architecture-%EB%A9%94%EC%8B%9C%EC%A7%80-%EB%B8%8C%EB%A1%9C%EC%BB%A4%EC%99%80-%EC%9D%B4%EB%B2%A4%ED%8A%B8-%EB%B8%8C%EB%A1%9C%EC%BB%A4-%EB%A9%94%EC%8B%9C%EC%A7%80%EC%99%80-%EC%9D%B4%EB%B2%A4%ED%8A%B8-%EA%B7%B8%EB%A6%AC%EA%B3%A0-RabbitMQ-%EC%99%80-Kafka)
+- 연구와 개발의 차이
+  - [개발과 연구의 차이](https://www.ibric.org/bric/community/popular-sori.do?mode=view&articleNo=9569214&title=%EA%B0%9C%EB%B0%9C%EA%B3%BC+%EC%97%B0%EA%B5%AC%EC%9D%98+%EC%B0%A8%EC%9D%B4#!/list)
+  - [개발자와 연구자 - 파트타임 개발자가 살아남는 법](https://lifidea.tistory.com/entry/%EA%B0%9C%EB%B0%9C%EC%9E%90%EC%99%80-%EC%97%B0%EA%B5%AC%EC%9E%90-%ED%8C%8C%ED%8A%B8%ED%83%80%EC%9E%84-%EA%B0%9C%EB%B0%9C%EC%9E%90%EA%B0%80-%EC%82%B4%EC%95%84%EB%82%A8%EB%8A%94-%EB%B2%95)
 - # vue.js에서 frontend api 관리 방법
   - [[번역]Vue 프로젝트를 위한 API Factories 설계](https://velog.io/@taewo/%EB%B2%88%EC%97%ADVue-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%EB%A5%BC-%EC%9C%84%ED%95%9C-API-Factories-%EC%84%A4%EA%B3%84)
   - [[Vue의 현실] API Interface 만들기](https://velog.io/@uriyang_/Vue%EC%9D%98-%ED%98%84%EC%8B%A4-API-inteface-2)
