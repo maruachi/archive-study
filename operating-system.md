@@ -130,3 +130,16 @@
 - speedup <= 1/(S+(1-S)/N)
   - S: the portion that must be performed serially on a system
   - N: the number of processing cores
+
+## User threads and Kernel threads
+- User thread -> JVM에서 관리되는 thread (user space)
+- Kernel thread -> OS kernel에서 하드웨어와 직접적으로 연관된 thread (kernel space)
+- many-to-many, one-to-many, many-to-one
+
+## Implicit Threading
+- Four alternative approaches using implicit threading
+  - implicit threading은 스레드의 생성과 관리의 책임을 개발자가 직접하지 않고 라이브러리나 외부로 넘기는 것
+  - Thread Pools: Thread Pool에서 thread를 획득하여 사용하는 방식
+  - Fork & Join
+  - OpenMP: 특정 코드 블락을 병렬처리. 컴파일러에게 지시하여 병렬처리하도록 만든다. 
+  - Grand Central Dispatch
