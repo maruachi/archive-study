@@ -143,3 +143,35 @@
   - Fork & Join
   - OpenMP: 특정 코드 블락을 병렬처리. 컴파일러에게 지시하여 병렬처리하도록 만든다. 
   - Grand Central Dispatch
+
+# CPU scheduling
+
+## CPU scheduling의 기본 개념
+- 멀티프로그래밍 시에 여러개의 프로세스를 동시에 돌릴 수 있고 이를 통해 CPU 활용을 최대화 할 수 있다.
+- I/O burst vs CPU burst
+  - 일반적으로 I/O burst duration이 높은 프로그램(I/O burst bound)이 많기 때문에, cpu scheduling이 이점을 많이 챙길 수 있다.
+![image](https://github.com/user-attachments/assets/58b980e9-65d0-4733-85a2-bc14aecca468)
+
+## CPU scheduler
+- 실행할 프로세스를 선택하는 기준
+  - FIFO queue vs priority queue
+- Non-preemptive scheduling vs Preemptive scheduling
+  - Non-preemptive scheduling: CPU를 종료 또는 wait 상태로 변경될 때까지 프로세스가 cpu를 점령
+  - Preemptive scheduling: 스케쥴러가 언제든지 프로세스를 언제든지 변경 가능
+- Decision Making for CPU-scheduling
+  - 1. running -> waiting state
+  - 2. running -> ready state
+  - 3. waiting -> ready state
+  - 4. process terminates
+  - 1 & 4 no chice - non-preemptive scheduling
+  - 2 & 3 preemptive or non-preemptive 선택 가능
+- Dispatcher
+  - Context switching 시에 scheduler에게 어떤 process를 실행시킬지 알려주는 역할
+  - Dispatcher latency: PCB 블록을 전환 시에 걸리는 delay 시간
+  - `vmstat 1 3` 명령어 입력 시에 context switching이 얼마나 많이 일어나는 확인 가능
+- CPU scheduling algorithms
+  - CPU scheduling problems: ready 상태의 process 중 어떤 process를 먼저 실행시킬 것인가?
+  - FCFS: 순서대로 처리
+  - SJF: CPU-burst가 가장 짧은 process부터 처리
+  - FCFS vs SJF
+    - SJF 작업 시에 waiting time과 turnaround time을 줄일 수 있다.
