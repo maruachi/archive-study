@@ -227,6 +227,11 @@ export default setup(){
   - 0세대, 1세대, 2세대로 나뉘며 0세대가 young 2세대로 갈수록 old이다. 0세대를 더 자주 갈비지 컬렉션 하도록 되어 있다.
   - [Python GC가 작동하는 원리](https://www.winterjung.dev/python-gc/)
 
+# user mode vs kernel mode
+- user mode: application 코드는 보통 유저모드에서 실행되며, 유저모드에서 접근할 수 있는 자원은 한정적이다.
+- kernel mode: kernel mode에서는 모든 자원에 접근 명령 할 수 있다.
+- user mode와 kernel mode는 system call을 통해서 소통한다.
+
 # 질문 리스트
 - Visitor 패턴은 무엇일까?
 - Iterator 패턴은 무엇일까?
