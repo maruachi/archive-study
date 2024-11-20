@@ -1,3 +1,9 @@
+# Why Go language?
+- Go lang is basically used for backend side like java
+- Go lang is designed as a language for mircoservices comparing to java because it doesn't require a huge machine (jvm) to consume a lot of memory and cpu.
+- Go lang: syntax simple, nice concurrency, very fast
+- [why go rddit question](https://www.reddit.com/r/golang/comments/11c9wv1/why_go/?rdt=45890)
+
 # MySQL vs PostgreSQL 차이
 - MySQL는 무난하게 웹서비스에서 사용하기 용이한 느낌이며 PostgreSQL은 대규모 데이터 서비스에 적합하다.
 - [f-lab MySQL vs PostgreSQL 차이](https://f-lab.kr/insight/mysql-vs-postgresql?gad_source=1&gclid=Cj0KCQjwrp-3BhDgARIsAEWJ6Swmudqd9Tc7-UEkrDWxc927kTPxLRg7xZzZCCGRQb3Lb7mttN-IPuoaAms3EALw_wcB)
