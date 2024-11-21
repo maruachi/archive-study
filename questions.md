@@ -1,3 +1,9 @@
+# History of XPATH
+- Basically, Xpath is a type of query language to search elements in xml format.
+- Xpath stands for Xml Path Language
+- It can be applicable to html as well.
+- [xpath wikipedia](https://en.wikipedia.org/wiki/XPath)
+
 # Why Go language?
 - Go lang is basically used for backend side like java
 - Go lang is designed as a language for mircoservices comparing to java because it doesn't require a huge machine (jvm) to consume a lot of memory and cpu.
